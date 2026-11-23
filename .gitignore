@@ -1,0 +1,12 @@
+__pycache__/
+*.py[cod]
+*$py.class
+.Python
+.env
+.env.*
+.vercel
+.DS_Store
+Thumbs.db
+*.log
+.cursor/
+agent-transcripts/
