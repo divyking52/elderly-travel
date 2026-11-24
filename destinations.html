@@ -2451,6 +2451,73 @@ html.reduce .acc-panel { transition: none; }
     min-height: 210px;
   }
   .assure-lead h2 { font-size: clamp(1.9rem, 7vw, 2.5rem); }
+  .stories { overflow-x: clip; }
+  .stories-head { flex-direction: column; align-items: start; }
+  .stories-head .note { max-width: none; }
+  .story-stage {
+    perspective: none;
+    min-height: 0;
+    margin-inline: 0;
+    padding: 0.5rem 0 0;
+    overflow: hidden;
+    width: 100%;
+  }
+  .story-orbit {
+    height: auto;
+    width: 100%;
+    transform: none !important;
+    transform-style: flat;
+  }
+  .story-panel,
+  .story-panel.is-active,
+  .story-panel.is-prev,
+  .story-panel.is-next,
+  .story-panel.is-far {
+    position: relative;
+    inset: auto;
+    left: auto;
+    right: auto;
+    top: auto;
+    bottom: auto;
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    display: none;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 0.9rem;
+    opacity: 1;
+    transform: none !important;
+    transition: none;
+    pointer-events: auto;
+    z-index: auto;
+  }
+  .story-panel.is-active { display: grid; }
+  .story-panel:not(.is-active) .story-frame {
+    width: 100%;
+    filter: none;
+  }
+  .story-frame,
+  .story-plate {
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+    transform: none !important;
+    box-sizing: border-box;
+  }
+  .story-frame { padding: 0.55rem 0.55rem 1.05rem; }
+  .story-frame img { width: 100%; height: min(48vw, 280px); }
+  .story-plate { padding: 1.15rem 1.05rem; }
+  .story-plate blockquote {
+    font-size: clamp(1.28rem, 3.6vw, 1.65rem);
+    overflow-wrap: anywhere;
+    word-break: break-word;
+  }
+  .story-plate .story-who,
+  .story-plate .stars {
+    overflow-wrap: anywhere;
+    word-break: break-word;
+  }
+  .story-floor { display: none; }
 }
 @media (max-width: 700px) {
   .wrap { width: min(var(--max), calc(100% - 1.5rem)); }
@@ -2541,26 +2608,14 @@ html.reduce .acc-panel { transition: none; }
   .scroll-hint { display: none; }
   .hero-egress { height: 140vh; }
   .egress-word { font-size: clamp(2.8rem, 14vw, 4.4rem); }
-  .stories-head { flex-direction: column; align-items: start; }
-  .story-stage {
-    perspective: none;
-    min-height: 0;
-    padding-top: 0.4rem;
+  .story-frame img { height: min(52vw, 240px); }
+  .story-plate { padding: 1.05rem 0.95rem 1.1rem; }
+  .story-plate blockquote { font-size: clamp(1.22rem, 5.2vw, 1.5rem); }
+  .story-controls { width: 100%; gap: 0.45rem; }
+  .story-controls .text-btn {
+    font-size: 0.95rem;
+    padding: 0.35rem 0.7rem;
   }
-  .story-orbit { height: auto; transform: none !important; }
-  .story-panel {
-    position: relative; inset: auto; display: none;
-    grid-template-columns: 1fr; gap: 1rem;
-    opacity: 1; transform: none !important; transition: none;
-  }
-  .story-panel.is-active { display: grid; }
-  .story-panel.is-prev,
-  .story-panel.is-next,
-  .story-panel.is-far { display: none; opacity: 0; }
-  .story-frame { padding: 0.55rem 0.55rem 1.15rem; transform: none; }
-  .story-frame img { height: min(52vw, 280px); }
-  .story-plate { transform: none; padding: 1.15rem 1.1rem; }
-  .story-floor { display: none; }
 }
 main a:not(.btn):not(.logo):not(.rail-card):not(.tile):not(.ways-cell) { text-underline-offset: 0.2em; }
 .site-footer a { text-underline-offset: 0.2em; }
